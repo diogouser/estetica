@@ -6,6 +6,8 @@
 <title>Clínica Exemplo | Estética avançada em Itumbiara</title>
 <meta name="description" content="Estética avançada em Itumbiara, GO. Protocolos personalizados, avaliação individual e agendamento pelo WhatsApp.">
 <meta name="theme-color" content="#F5F0EA">
+<!-- DEMONSTRAÇÃO: impede o Google de indexar. APAGUE esta linha só no site entregue e pago. -->
+<meta name="robots" content="noindex, nofollow">
 
 <!-- Prévia do link no WhatsApp e no Instagram (troque ao publicar para uma cliente) -->
 <meta property="og:type" content="website">
@@ -27,15 +29,15 @@
 /* ===================== TEMAS ===================== */
 :root,[data-tema="areia"]{
   --bg:#F5F0EA; --surface:#FBF8F4; --ink:#1F1B19; --muted:#6B625C; --line:#E3D9CF;
-  --accent:#8C6A5D; --btn:#1F1B19; --btn-ink:#FBF8F4; --soft:#EDE5DC; color-scheme:light;
+  --accent:#7E5F53; --btn:#1F1B19; --btn-ink:#FBF8F4; --soft:#EDE5DC; color-scheme:light;
 }
 [data-tema="rose"]{
   --bg:#F8EFEC; --surface:#FDF8F6; --ink:#2B1F24; --muted:#74626A; --line:#EBDAD6;
-  --accent:#A35F6E; --btn:#7E4655; --btn-ink:#FFF; --soft:#F1E1DD;
+  --accent:#924F62; --btn:#7E4655; --btn-ink:#FFF; --soft:#F1E1DD;
 }
 [data-tema="salvia"]{
   --bg:#EEF0EA; --surface:#F8F9F5; --ink:#1D221E; --muted:#5F675F; --line:#DCE1D6;
-  --accent:#5F7464; --btn:#2F3D33; --btn-ink:#F8F9F5; --soft:#E2E7DC;
+  --accent:#566A5B; --btn:#2F3D33; --btn-ink:#F8F9F5; --soft:#E2E7DC;
 }
 [data-tema="noite"]{
   --bg:#151312; --surface:#1E1B19; --ink:#F3ECE4; --muted:#B3A79C; --line:#2F2A27;
@@ -268,7 +270,8 @@ footer a{color:inherit}
   MODELO DE SITE PARA CLÍNICA DE ESTÉTICA (versão 2)
   Personalize só o bloco CONFIG no fim do arquivo e as tags "og:" do <head>.
   Ao entregar para uma cliente:
-    1. CONFIG.demo = false (some a faixa e o seletor de tema)
+    1. CONFIG.demo = false (some a faixa e o seletor de tema) e apague a linha
+       <meta name="robots" ...> do topo, para o Google poder mostrar o site
     2. Troque TODAS as fotos de img/ por fotos reais da clínica
     3. Use só depoimentos e notas REAIS; antes e depois só com autorização
   ============================================================================
@@ -296,10 +299,10 @@ footer a{color:inherit}
   <section class="hero">
     <div class="hero-grid">
       <div class="hero-text">
-        <span class="kicker rv" data-c="cidadeKicker">Estética avançada · Itumbiara</span>
-        <h1 class="rv"><span data-c="titulo1">Naturalmente,</span> <em data-c="titulo2">você.</em></h1>
-        <p class="lead rv" data-c="subtitulo">Protocolos personalizados, avaliação individual e resultados que respeitam os seus traços.</p>
-        <div class="cta rv">
+        <span class="kicker" data-c="cidadeKicker">Estética avançada · Itumbiara</span>
+        <h1><span data-c="titulo1">Naturalmente,</span> <em data-c="titulo2">você.</em></h1>
+        <p class="lead" data-c="subtitulo">Protocolos personalizados, avaliação individual e resultados que respeitam os seus traços.</p>
+        <div class="cta">
           <a class="btn" data-wa="geral"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9 4.4 4.4 0 0 0 .9 2.3 10 10 0 0 0 3.8 3.4c1.4.6 2 .6 2.7.5.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1l-.3-.2Z"/></svg>Agendar avaliação</a>
           <a class="link" href="#tratamentos">Ver tratamentos</a>
         </div>
