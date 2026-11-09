@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clínica Exemplo | Estética em Itumbiara</title>
+<meta name="description" content="Estética avançada em Itumbiara, GO. Agende sua avaliação pelo WhatsApp.">
+<meta name="theme-color" content="#2B1F24">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBF7F4; --bg2:#F4ECE6; --ink:#2B1F24; --muted:#6E5F64; --line:#EADFD8;
+    --accent:#9C5B6B; --accent-ink:#FFFFFF; --gold:#B8916A; --card:#FFFFFF;
+    --radius:18px; --shadow:0 10px 30px rgba(43,31,36,.08);
+    color-scheme:light;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.1;margin:0}
+  h2{font-size:clamp(30px,5vw,44px);margin-bottom:12px}
+  .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:10px}
+  .lead{color:var(--muted);max-width:560px}
+  section{padding:72px 0}
+
+  /* aviso de demonstração */
+  .demo{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:8px 16px}
+
+  /* topo */
+  header{position:sticky;top:0;z-index:20;background:rgba(251,247,244,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .top{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+  .logo{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;text-decoration:none;white-space:nowrap}
+  nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:22px}
+  nav a:hover{color:var(--ink)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:var(--accent-ink);
+       text-decoration:none;font-weight:600;font-size:15px;padding:14px 22px;border-radius:999px;border:0;cursor:pointer;
+       transition:transform .15s ease, box-shadow .15s ease;box-shadow:0 6px 18px rgba(156,91,107,.28)}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(156,91,107,.34)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink);box-shadow:none}
+  .btn.sm{padding:10px 16px;font-size:14px}
+  .btn svg{width:18px;height:18px}
+
+  /* hero */
+  .hero{padding:56px 0 64px;background:
+        radial-gradient(900px 420px at 85% 10%, #EFD9D6 0%, transparent 60%),
+        radial-gradient(700px 380px at 0% 100%, #F1E4D6 0%, transparent 60%)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  .hero h1{font-size:clamp(40px,7vw,68px);margin:6px 0 18px}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 22px}
+  .badges{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+  .badges b{color:var(--ink)}
+  .hero-art{aspect-ratio:4/5;border-radius:220px 220px var(--radius) var(--radius);background:
+        linear-gradient(160deg,#E9CFCB 0%,#D7AFA9 45%,#B98A8F 100%);position:relative;overflow:hidden;box-shadow:var(--shadow)}
+  .hero-art::after{content:"Foto da clínica ou da profissional";position:absolute;inset:auto 0 18px 0;text-align:center;
+        color:rgba(255,255,255,.85);font-size:13px;letter-spacing:.04em}
+  .hero-art .ring{position:absolute;border:1px solid rgba(255,255,255,.55);border-radius:50%}
+
+  /* procedimentos */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:10px}
+  .card h3{font-size:26px}
+  .card p{margin:0;color:var(--muted);font-size:15px;flex:1}
+  .meta{font-size:13px;color:var(--gold);font-weight:600;letter-spacing:.02em}
+  .card .btn{align-self:flex-start;margin-top:6px}
+
+  /* passos */
+  .alt{background:var(--bg2)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px;counter-reset:s}
+  .step{padding:22px;border-radius:var(--radius);background:var(--card);border:1px solid var(--line)}
+  .step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;
+        background:var(--accent);color:#fff;font-weight:600;margin-bottom:12px}
+  .step h3{font-size:22px;margin-bottom:6px}
+  .step p{margin:0;color:var(--muted);font-size:15px}
+
+  /* antes e depois */
+  .ba{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+  .ba figure{margin:0}
+  .ba .pic{aspect-ratio:1/1;border-radius:var(--radius);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line)}
+  .ba .pic span{display:grid;place-items:end center;padding-bottom:12px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+  .ba .pic span:first-child{background:linear-gradient(160deg,#CDB8B3,#B39C97)}
+  .ba .pic span:last-child{background:linear-gradient(160deg,#E8CFC6,#D9AFA6)}
+  .ba figcaption{font-size:14px;margin-top:10px}
+  .ba figcaption small{display:block;color:var(--muted);font-size:12px}
+
+  /* profissional */
+  .pro{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}
+  .pro-pic{aspect-ratio:1/1;border-radius:50%;background:linear-gradient(160deg,#E2C7C2,#BE9397);box-shadow:var(--shadow);max-width:360px;width:100%;margin:auto}
+  .reg{display:inline-block;margin-top:14px;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+  /* depoimentos */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+  .quote{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .quote p{margin:0 0 14px;font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.3}
+  .quote .who{font-size:14px;color:var(--muted)}
+  .stars{color:var(--gold);letter-spacing:2px;margin-bottom:8px}
+
+  /* faq */
+  .faq{max-width:760px;margin-top:24px}
+  details{border-bottom:1px solid var(--line);padding:18px 0}
+  summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--accent);font-size:22px;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--muted);margin:10px 0 0}
+
+  /* local */
+  .local{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch}
+  .map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:320px;background:var(--bg2)}
+  .map iframe{width:100%;height:100%;min-height:320px;border:0;display:block}
+  .info p{margin:0 0 14px}
+  .info b{display:block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+
+  /* final */
+  .final{background:var(--ink);color:#fff;text-align:center;padding:72px 0}
+  .final h2{color:#fff}
+  .final p{color:#D8CBCF;margin:0 auto 26px;max-width:520px}
+  footer{background:var(--ink);color:#A9999E;font-size:13px;text-align:center;padding:0 20px 90px;border-top:1px solid #3B2D33}
+  footer p{margin:0;padding-top:20px}
+
+  /* botão flutuante */
+  .float{position:fixed;right:18px;bottom:18px;z-index:30;width:60px;height:60px;border-radius:50%;background:#25D366;
+         display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.22);text-decoration:none}
+  .float svg{width:30px;height:30px;fill:#fff}
+
+  @media (max-width:860px){
+    nav{display:none}
+    .hero-grid,.pro,.local{grid-template-columns:1fr}
+    .hero-art{max-width:380px;width:100%;margin:0 auto;aspect-ratio:1/1;border-radius:var(--radius)}
+    .grid,.steps,.ba,.quotes{grid-template-columns:1fr}
+    section{padding:56px 0}
+  }
+  @media (min-width:861px) and (max-width:1020px){
+    .grid,.ba,.quotes{grid-template-columns:repeat(2,1fr)}
+  }
+</style>
+</head>
+<body>
+
+<!--
+  =====================================================================
+  SITE-MODELO PARA CLÍNICA DE ESTÉTICA
+  Para personalizar: troque só o bloco CONFIG lá embaixo (no <script>).
+  Antes de entregar a uma cliente: CONFIG.demo = false e use apenas
+  fotos, depoimentos e notas REAIS dela (com autorização das pacientes).
+  =====================================================================
+-->
+
+<div class="demo" id="demo">Site de demonstração. Nome, fotos e depoimentos são exemplos.</div>
+
+<header>
+  <div class="wrap top">
+    <a href="#inicio" class="logo" data-c="nome">Clínica Exemplo</a>
+    <nav>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#local">Onde estamos</a>
+    </nav>
+    <a class="btn sm" data-wa="Olá! Vi o site e quero agendar uma avaliação.">Agendar</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow" data-c="slogan">Estética avançada em Itumbiara</div>
+        <h1>Sua melhor versão, <em>com naturalidade</em> e segurança.</h1>
+        <p class="lead" data-c="intro">Protocolos personalizados, avaliação individual e acompanhamento depois do procedimento. Você sabe exatamente o que vai ser feito antes de começar.</p>
+        <div class="cta">
+          <a class="btn" data-wa="Olá! Vi o site e quero agendar uma avaliação.">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9 4.4 4.4 0 0 0 .9 2.3 10 10 0 0 0 3.8 3.4c1.4.6 2 .6 2.7.5.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1l-.3-.2Z"/></svg>
+            Agendar avaliação
+          </a>
+          <a class="btn ghost" href="#procedimentos">Ver procedimentos</a>
+        </div>
+        <div class="badges">
+          <span>★ <b data-c="notaGoogle">4,9</b> no Google (<span data-c="avaliacoes">120</span> avaliações)</span>
+          <span>Hora marcada, sem espera</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="ring" style="width:140%;height:140%;left:-20%;top:-20%"></div>
+        <div class="ring" style="width:100%;height:100%;left:0;top:0"></div>
+        <div class="ring" style="width:60%;height:60%;left:20%;top:20%"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="procedimentos">
+    <div class="wrap">
+      <div class="eyebrow">Procedimentos</div>
+      <h2>O que fazemos por você</h2>
+      <p class="lead">Toque em um procedimento e fale direto com a gente no WhatsApp, já com a mensagem pronta.</p>
+      <div class="grid" id="lista-procedimentos"></div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="eyebrow">Como funciona</div>
+      <h2>Simples do começo ao fim</h2>
+      <div class="steps">
+        <div class="step"><h3>Você chama no WhatsApp</h3><p>Escolhe o procedimento e o melhor horário para você.</p></div>
+        <div class="step"><h3>Avaliação individual</h3><p>Entendemos o que você quer e indicamos o protocolo certo, com valores claros.</p></div>
+        <div class="step"><h3>Procedimento e retorno</h3><p>Fazemos com segurança e acompanhamos o resultado depois.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resultados">
+    <div class="wrap">
+      <div class="eyebrow">Resultados</div>
+      <h2>Antes e depois</h2>
+      <p class="lead">Resultados reais variam de pessoa para pessoa. Todas as fotos são publicadas com autorização das pacientes.</p>
+      <div class="ba" id="lista-resultados"></div>
+    </div>
+  </section>
+
+  <section class="alt" id="sobre">
+    <div class="wrap pro">
+      <div class="pro-pic" aria-hidden="true"></div>
+      <div>
+        <div class="eyebrow">Quem cuida de você</div>
+        <h2 data-c="pro.nome">Dra. Nome Sobrenome</h2>
+        <p class="meta" data-c="pro.titulo">Biomédica esteta</p>
+        <p class="lead" data-c="pro.texto">Mais de 8 anos de experiência em estética facial e corporal, com especialização em harmonização e bioestimuladores. Atendimento próximo, sem pressa e sem exagero.</p>
+        <span class="reg" data-c="pro.registro">CRBM 0000</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="eyebrow">Quem já veio</div>
+      <h2>O que as clientes dizem</h2>
+      <div class="quotes" id="lista-depoimentos"></div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="eyebrow">Dúvidas</div>
+      <h2>Perguntas frequentes</h2>
+      <div class="faq" id="lista-faq"></div>
+    </div>
+  </section>
+
+  <section id="local">
+    <div class="wrap local">
+      <div class="info">
+        <div class="eyebrow">Onde estamos</div>
+        <h2>Venha nos visitar</h2>
+        <p><b>Endereço</b><span data-c="endereco">Rua Exemplo, 123, Centro, Itumbiara, GO</span></p>
+        <p><b>Horário</b><span data-c="horario">Seg a sex, 8h às 19h · Sáb, 8h às 13h</span></p>
+        <p><b>Instagram</b><a id="link-insta" href="#" target="_blank" rel="noopener">@clinicaexemplo</a></p>
+        <a class="btn" data-wa="Olá! Vi o site e quero agendar uma avaliação.">Agendar pelo WhatsApp</a>
+      </div>
+      <div class="map"><iframe id="mapa" title="Mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>Pronta para começar?</h2>
+      <p>Chame no WhatsApp, tire suas dúvidas e marque sua avaliação no horário que for melhor para você.</p>
+      <a class="btn" data-wa="Olá! Vi o site e quero agendar uma avaliação.">Agendar avaliação</a>
+    </div>
+  </section>
+</main>
+
+<footer><p><span data-c="nome">Clínica Exemplo</span> · <span data-c="endereco"></span></p></footer>
+
+<a class="float" aria-label="Falar no WhatsApp" data-wa="Olá! Vi o site e quero agendar uma avaliação.">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9 4.4 4.4 0 0 0 .9 2.3 10 10 0 0 0 3.8 3.4c1.4.6 2 .6 2.7.5.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1l-.3-.2Z"/></svg>
+</a>
+
+<script>
+/* =====================  PERSONALIZE AQUI  ===================== */
+const CONFIG = {
+  demo: true,                       // false ao entregar para a cliente
+  nome: "Clínica Exemplo",
+  slogan: "Estética avançada em Itumbiara",
+  whatsapp: "5564999999999",        // 55 + DDD + número, só dígitos
+  instagram: "clinicaexemplo",      // sem @
+  endereco: "Rua Exemplo, 123, Centro, Itumbiara, GO",
+  mapa: "Centro, Itumbiara, GO",    // texto que o Google Maps entende
+  horario: "Seg a sex, 8h às 19h · Sáb, 8h às 13h",
+  notaGoogle: "4,9",
+  avaliacoes: "120",
+  pro: {
+    nome: "Dra. Nome Sobrenome",
+    titulo: "Biomédica esteta",
+    registro: "CRBM 0000",
+    texto: "Mais de 8 anos de experiência em estética facial e corporal, com especialização em harmonização e bioestimuladores. Atendimento próximo, sem pressa e sem exagero."
+  },
+  procedimentos: [
+    { nome: "Limpeza de pele profunda", desc: "Remove impurezas, cravos e células mortas. Pele mais uniforme e luminosa já na primeira sessão.", meta: "60 min" },
+    { nome: "Harmonização facial", desc: "Realça seus traços com equilíbrio, sem mudar quem você é. Planejamento feito na avaliação.", meta: "Avaliação gratuita" },
+    { nome: "Bioestimulador de colágeno", desc: "Estimula a produção natural de colágeno para firmeza e sustentação da pele.", meta: "45 min" },
+    { nome: "Depilação a laser", desc: "Redução duradoura dos pelos com conforto e segurança para vários tipos de pele.", meta: "Pacotes por área" },
+    { nome: "Drenagem linfática", desc: "Reduz inchaço e retenção de líquido. Sensação de leveza logo depois da sessão.", meta: "50 min" },
+    { nome: "Micropigmentação de sobrancelhas", desc: "Desenho personalizado, com fios realistas e cor pensada para o seu tom.", meta: "Retoque incluso" }
+  ],
+  resultados: [
+    { titulo: "Harmonização de lábios", nota: "1 sessão" },
+    { titulo: "Limpeza de pele", nota: "3 sessões" },
+    { titulo: "Micropigmentação", nota: "Resultado após 30 dias" }
+  ],
+  depoimentos: [
+    { texto: "Atendimento impecável. Explicou tudo antes e o resultado ficou natural, do jeito que eu queria.", nome: "Cliente de exemplo", proc: "Harmonização" },
+    { texto: "Minha pele nunca esteve tão bonita. Já marquei a próxima sessão.", nome: "Cliente de exemplo", proc: "Limpeza de pele" },
+    { texto: "Ambiente lindo, pontual e muito cuidadosa. Recomendo de olhos fechados.", nome: "Cliente de exemplo", proc: "Drenagem" }
+  ],
+  faq: [
+    { p: "A avaliação é paga?", r: "A primeira avaliação é sem custo. Nela entendemos o seu objetivo e indicamos o protocolo ideal." },
+    { p: "Dói?", r: "Usamos técnicas e anestésicos tópicos para deixar cada procedimento o mais confortável possível." },
+    { p: "Quais as formas de pagamento?", r: "Pix, cartão de débito e crédito, com parcelamento em alguns procedimentos." },
+    { p: "Quanto tempo dura o resultado?", r: "Depende do procedimento e do seu organismo. Explicamos isso com clareza na avaliação." }
+  ]
+};
+/* ============================================================== */
+
+(function(){
+  const $ = (s, el=document) => el.querySelector(s);
+  const get = path => path.split(".").reduce((o,k)=>o && o[k], CONFIG);
+  const wa = msg => "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(msg);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+  if (!CONFIG.demo) $("#demo").remove();
+  document.title = CONFIG.nome + " | Estética em Itumbiara";
+
+  document.querySelectorAll("[data-c]").forEach(el => {
+    const v = get(el.dataset.c);
+    if (v !== undefined) el.textContent = v;
+  });
+
+  $("#lista-procedimentos").innerHTML = CONFIG.procedimentos.map(p => `
+    <article class="card">
+      <span class="meta">${esc(p.meta)}</span>
+      <h3>${esc(p.nome)}</h3>
+      <p>${esc(p.desc)}</p>
+      <a class="btn sm" data-wa="Olá! Vi o site e quero agendar uma avaliação de ${esc(p.nome)}.">Quero agendar</a>
+    </article>`).join("");
+
+  $("#lista-resultados").innerHTML = CONFIG.resultados.map(r => `
+    <figure>
+      <div class="pic"><span>Antes</span><span>Depois</span></div>
+      <figcaption>${esc(r.titulo)}<small>${esc(r.nota)}</small></figcaption>
+    </figure>`).join("");
+
+  $("#lista-depoimentos").innerHTML = CONFIG.depoimentos.map(d => `
+    <div class="quote">
+      <div class="stars">★★★★★</div>
+      <p>“${esc(d.texto)}”</p>
+      <div class="who">${esc(d.nome)} · ${esc(d.proc)}</div>
+    </div>`).join("");
+
+  $("#lista-faq").innerHTML = CONFIG.faq.map(f => `
+    <details><summary>${esc(f.p)}</summary><p>${esc(f.r)}</p></details>`).join("");
+
+  document.querySelectorAll("[data-wa]").forEach(a => {
+    a.href = wa(a.dataset.wa);
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+
+  const insta = $("#link-insta");
+  insta.href = "https://instagram.com/" + CONFIG.instagram;
+  insta.textContent = "@" + CONFIG.instagram;
+
+  $("#mapa").src = "https://maps.google.com/maps?q=" + encodeURIComponent(CONFIG.mapa) + "&z=15&output=embed";
+})();
+</script>
+</body>
+</html>
