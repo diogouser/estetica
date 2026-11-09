@@ -1,382 +1,670 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-tema="areia">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Clínica Exemplo | Estética em Itumbiara</title>
-<meta name="description" content="Estética avançada em Itumbiara, GO. Agende sua avaliação pelo WhatsApp.">
-<meta name="theme-color" content="#2B1F24">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clínica Exemplo | Estética avançada em Itumbiara</title>
+<meta name="description" content="Estética avançada em Itumbiara, GO. Protocolos personalizados, avaliação individual e agendamento pelo WhatsApp.">
+<meta name="theme-color" content="#F5F0EA">
+
+<!-- Prévia do link no WhatsApp e no Instagram (troque ao publicar para uma cliente) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Clínica Exemplo | Estética avançada em Itumbiara">
+<meta property="og:description" content="Protocolos personalizados e resultados naturais. Agende sua avaliação pelo WhatsApp.">
+<meta property="og:image" content="https://diogouser.github.io/estetica/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231F1B19'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='34' fill='%23F5F0EA' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="image" href="img/hero.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --bg:#FBF7F4; --bg2:#F4ECE6; --ink:#2B1F24; --muted:#6E5F64; --line:#EADFD8;
-    --accent:#9C5B6B; --accent-ink:#FFFFFF; --gold:#B8916A; --card:#FFFFFF;
-    --radius:18px; --shadow:0 10px 30px rgba(43,31,36,.08);
-    color-scheme:light;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  img{max-width:100%;display:block}
-  a{color:inherit}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-  h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.1;margin:0}
-  h2{font-size:clamp(30px,5vw,44px);margin-bottom:12px}
-  .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:10px}
-  .lead{color:var(--muted);max-width:560px}
-  section{padding:72px 0}
+/* ===================== TEMAS ===================== */
+:root,[data-tema="areia"]{
+  --bg:#F5F0EA; --surface:#FBF8F4; --ink:#1F1B19; --muted:#6B625C; --line:#E3D9CF;
+  --accent:#8C6A5D; --btn:#1F1B19; --btn-ink:#FBF8F4; --soft:#EDE5DC; color-scheme:light;
+}
+[data-tema="rose"]{
+  --bg:#F8EFEC; --surface:#FDF8F6; --ink:#2B1F24; --muted:#74626A; --line:#EBDAD6;
+  --accent:#A35F6E; --btn:#7E4655; --btn-ink:#FFF; --soft:#F1E1DD;
+}
+[data-tema="salvia"]{
+  --bg:#EEF0EA; --surface:#F8F9F5; --ink:#1D221E; --muted:#5F675F; --line:#DCE1D6;
+  --accent:#5F7464; --btn:#2F3D33; --btn-ink:#F8F9F5; --soft:#E2E7DC;
+}
+[data-tema="noite"]{
+  --bg:#151312; --surface:#1E1B19; --ink:#F3ECE4; --muted:#B3A79C; --line:#2F2A27;
+  --accent:#C6A27A; --btn:#C6A27A; --btn-ink:#151312; --soft:#25211E; color-scheme:dark;
+}
 
-  /* aviso de demonstração */
-  .demo{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:8px 16px}
+/* ===================== BASE ===================== */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Figtree,system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background .4s,color .4s}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.05;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(34px,5.4vw,54px)}
+h2 em,h1 em{font-style:italic}
+.kicker{display:block;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px}
+.lead{color:var(--muted);font-size:17px;max-width:540px;margin:16px 0 0}
+section{padding:88px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.link{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px}
 
-  /* topo */
-  header{position:sticky;top:0;z-index:20;background:rgba(251,247,244,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .top{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
-  .logo{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;text-decoration:none;white-space:nowrap}
-  nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:22px}
-  nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--btn);color:var(--btn-ink);
+  text-decoration:none;font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:17px 28px;border:0;border-radius:2px;
+  cursor:pointer;transition:transform .2s ease,opacity .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.out{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn svg{width:17px;height:17px;flex:none}
 
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:var(--accent-ink);
-       text-decoration:none;font-weight:600;font-size:15px;padding:14px 22px;border-radius:999px;border:0;cursor:pointer;
-       transition:transform .15s ease, box-shadow .15s ease;box-shadow:0 6px 18px rgba(156,91,107,.28)}
-  .btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(156,91,107,.34)}
-  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink);box-shadow:none}
-  .btn.sm{padding:10px 16px;font-size:14px}
-  .btn svg{width:18px;height:18px}
+/* faixa de demonstração */
+.demo{background:var(--ink);color:var(--bg);font-size:12.5px;text-align:center;padding:8px 16px;letter-spacing:.02em}
 
-  /* hero */
-  .hero{padding:56px 0 64px;background:
-        radial-gradient(900px 420px at 85% 10%, #EFD9D6 0%, transparent 60%),
-        radial-gradient(700px 380px at 0% 100%, #F1E4D6 0%, transparent 60%)}
-  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-  .hero h1{font-size:clamp(40px,7vw,68px);margin:6px 0 18px}
-  .hero h1 em{font-style:italic;color:var(--accent)}
-  .hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 22px}
-  .badges{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
-  .badges b{color:var(--ink)}
-  .hero-art{aspect-ratio:4/5;border-radius:220px 220px var(--radius) var(--radius);background:
-        linear-gradient(160deg,#E9CFCB 0%,#D7AFA9 45%,#B98A8F 100%);position:relative;overflow:hidden;box-shadow:var(--shadow)}
-  .hero-art::after{content:"Foto da clínica ou da profissional";position:absolute;inset:auto 0 18px 0;text-align:center;
-        color:rgba(255,255,255,.85);font-size:13px;letter-spacing:.04em}
-  .hero-art .ring{position:absolute;border:1px solid rgba(255,255,255,.55);border-radius:50%}
+/* ===================== TOPO ===================== */
+header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
+.top{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{text-decoration:none;line-height:1}
+.logo b{display:block;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:23px;letter-spacing:.06em;text-transform:uppercase}
+.logo small{display:block;font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+nav{display:flex;gap:30px}
+nav a{font-size:13px;letter-spacing:.06em;color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+.top .btn{padding:12px 18px;font-size:11.5px}
 
-  /* procedimentos */
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:10px}
-  .card h3{font-size:26px}
-  .card p{margin:0;color:var(--muted);font-size:15px;flex:1}
-  .meta{font-size:13px;color:var(--gold);font-weight:600;letter-spacing:.02em}
-  .card .btn{align-self:flex-start;margin-top:6px}
+/* ===================== HERO ===================== */
+.hero{padding:0}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:min(86vh,820px)}
+.hero-text{display:flex;flex-direction:column;justify-content:center;padding:72px 56px 72px max(20px,calc((100vw - 1180px)/2 + 20px))}
+.hero h1{font-size:clamp(56px,8.6vw,112px);line-height:.95}
+.hero h1 em{display:block;color:var(--accent)}
+.hero .lead{font-size:18px;margin-top:26px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:34px}
+.hero-img{position:relative;overflow:hidden;background:var(--soft)}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;animation:zoom 14s ease-out both}
+@keyframes zoom{from{transform:scale(1.08)}to{transform:scale(1)}}
 
-  /* passos */
-  .alt{background:var(--bg2)}
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px;counter-reset:s}
-  .step{padding:22px;border-radius:var(--radius);background:var(--card);border:1px solid var(--line)}
-  .step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;
-        background:var(--accent);color:#fff;font-weight:600;margin-bottom:12px}
-  .step h3{font-size:22px;margin-bottom:6px}
-  .step p{margin:0;color:var(--muted);font-size:15px}
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface)}
+.trust ul{list-style:none;margin:0 auto;padding:18px 20px;display:flex;justify-content:center;flex-wrap:wrap;gap:12px 40px;max-width:1180px}
+.trust li{font-size:13.5px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.trust li b{color:var(--ink);font-weight:600}
+.stars{color:var(--accent);letter-spacing:2px}
 
-  /* antes e depois */
-  .ba{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
-  .ba figure{margin:0}
-  .ba .pic{aspect-ratio:1/1;border-radius:var(--radius);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line)}
-  .ba .pic span{display:grid;place-items:end center;padding-bottom:12px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff}
-  .ba .pic span:first-child{background:linear-gradient(160deg,#CDB8B3,#B39C97)}
-  .ba .pic span:last-child{background:linear-gradient(160deg,#E8CFC6,#D9AFA6)}
-  .ba figcaption{font-size:14px;margin-top:10px}
-  .ba figcaption small{display:block;color:var(--muted);font-size:12px}
+/* ===================== TRATAMENTOS ===================== */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cat{display:flex;flex-direction:column}
+.cat figure{margin:0;position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--soft)}
+.cat figure img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.cat:hover figure img{transform:scale(1.05)}
+.cat figure span{position:absolute;top:14px;left:16px;font-size:12px;letter-spacing:.2em;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+.cat h3{font-size:30px;margin:18px 0 6px}
+.cat p{margin:0 0 12px;color:var(--muted);font-size:14.5px}
+.cat ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.cat li a{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:14.5px}
+.cat li a::after{content:"→";color:var(--accent);transition:transform .2s}
+.cat li a:hover::after{transform:translateX(4px)}
 
-  /* profissional */
-  .pro{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}
-  .pro-pic{aspect-ratio:1/1;border-radius:50%;background:linear-gradient(160deg,#E2C7C2,#BE9397);box-shadow:var(--shadow);max-width:360px;width:100%;margin:auto}
-  .reg{display:inline-block;margin-top:14px;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+/* ===================== OBJETIVOS ===================== */
+.alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.goals{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.goal-list{list-style:none;margin:0;padding:0;counter-reset:g}
+.goal-list button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;gap:18px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line);
+  font-family:"Cormorant Garamond",serif;font-size:clamp(22px,2.6vw,28px);color:var(--muted);transition:color .2s,padding .25s}
+.goal-list button::before{counter-increment:g;content:counter(g,decimal-leading-zero);font:600 11.5px Figtree,sans-serif;letter-spacing:.18em;color:var(--accent);min-width:22px}
+.goal-list button:hover{color:var(--ink)}
+.goal-list button[aria-pressed="true"]{color:var(--ink);padding-left:10px}
+.goal-list button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.goal-panel{position:sticky;top:96px;background:var(--bg);border:1px solid var(--line);padding:36px}
+.goal-panel .sel{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.goal-panel h3{font-size:clamp(32px,3.6vw,42px);margin:12px 0 14px}
+.goal-panel p{color:var(--muted);margin:0 0 18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px;padding:0;list-style:none}
+.chips li{font-size:13px;border:1px solid var(--line);background:var(--surface);padding:7px 13px;border-radius:999px}
+.note{font-size:12.5px;color:var(--muted);margin-top:16px}
 
-  /* depoimentos */
-  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
-  .quote{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
-  .quote p{margin:0 0 14px;font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.3}
-  .quote .who{font-size:14px;color:var(--muted)}
-  .stars{color:var(--gold);letter-spacing:2px;margin-bottom:8px}
+/* ===================== PROFISSIONAL / EXPERIÊNCIA ===================== */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.photo{aspect-ratio:4/5;overflow:hidden;background:var(--soft)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo.wide{aspect-ratio:4/3}
+.reg{display:inline-block;margin-top:22px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:9px 14px;border:1px solid var(--line)}
+.creds{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:10px}
+.creds li{display:flex;gap:12px;font-size:15px}
+.creds li::before{content:"";width:18px;height:1px;background:var(--accent);margin-top:12px;flex:none}
+.points{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.points b{display:block;font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:500;margin-bottom:4px}
+.points span{font-size:14px;color:var(--muted)}
 
-  /* faq */
-  .faq{max-width:760px;margin-top:24px}
-  details{border-bottom:1px solid var(--line);padding:18px 0}
-  summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
-  summary::-webkit-details-marker{display:none}
-  summary::after{content:"+";color:var(--accent);font-size:22px;line-height:1}
-  details[open] summary::after{content:"–"}
-  details p{color:var(--muted);margin:10px 0 0}
+/* ===================== RESULTADOS ===================== */
+.res{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.tabs button{all:unset;cursor:pointer;font-size:13px;padding:9px 15px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.cmp{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--soft);--pos:50%;user-select:none;touch-action:pan-y}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.cmp .antes{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.cmp .antes.ilustra{filter:saturate(.55) contrast(.86) brightness(.93) sepia(.12)}
+.cmp .bar{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;margin-left:-1px;background:#fff;box-shadow:0 0 12px rgba(0,0,0,.25);pointer-events:none}
+.cmp .knob{position:absolute;top:50%;left:var(--pos);width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:#fff;display:grid;place-items:center;
+  box-shadow:0 6px 20px rgba(0,0,0,.2);pointer-events:none;color:#1F1B19;font-size:15px;letter-spacing:2px}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.cmp .tag{position:absolute;bottom:14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.35);padding:6px 10px;pointer-events:none}
+.cmp .tag.l{left:14px}.cmp .tag.r{right:14px}
+.cap{font-size:13px;color:var(--muted);margin-top:12px}
 
-  /* local */
-  .local{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch}
-  .map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:320px;background:var(--bg2)}
-  .map iframe{width:100%;height:100%;min-height:320px;border:0;display:block}
-  .info p{margin:0 0 14px}
-  .info b{display:block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+/* ===================== AVALIAÇÕES ===================== */
+.rating{display:flex;align-items:center;gap:18px}
+.rating .big{font-family:"Cormorant Garamond",serif;font-size:76px;line-height:1}
+.rating small{display:block;color:var(--muted);font-size:13.5px}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.quote{background:var(--surface);border:1px solid var(--line);padding:30px;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.quote p{margin:0;font-family:"Cormorant Garamond",serif;font-size:24px;line-height:1.25}
+.quote .who{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 
-  /* final */
-  .final{background:var(--ink);color:#fff;text-align:center;padding:72px 0}
-  .final h2{color:#fff}
-  .final p{color:#D8CBCF;margin:0 auto 26px;max-width:520px}
-  footer{background:var(--ink);color:#A9999E;font-size:13px;text-align:center;padding:0 20px 90px;border-top:1px solid #3B2D33}
-  footer p{margin:0;padding-top:20px}
+/* ===================== PASSOS / FAQ ===================== */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.step{padding:30px 28px 0 0}
+.step span{font-size:11.5px;letter-spacing:.2em;color:var(--accent);font-weight:600}
+.step h3{font-size:28px;margin:10px 0 8px}
+.step p{margin:0;color:var(--muted);font-size:15px}
+.faq{border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-family:"Cormorant Garamond",serif;font-size:24px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:300 26px Figtree,sans-serif;color:var(--accent);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:-6px 0 22px;color:var(--muted);max-width:680px}
 
-  /* botão flutuante */
-  .float{position:fixed;right:18px;bottom:18px;z-index:30;width:60px;height:60px;border-radius:50%;background:#25D366;
-         display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.22);text-decoration:none}
-  .float svg{width:30px;height:30px;fill:#fff}
+/* ===================== VISITA ===================== */
+.visit{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:stretch}
+.info dl{margin:28px 0 30px;display:grid;gap:18px}
+.info dt{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.info dd{margin:4px 0 0}
+.info .cta{display:flex;gap:12px;flex-wrap:wrap}
+.map{min-height:380px;background:var(--soft);border:1px solid var(--line);overflow:hidden}
+.map iframe{width:100%;height:100%;min-height:380px;border:0;display:block;filter:grayscale(.35) contrast(.95)}
 
-  @media (max-width:860px){
-    nav{display:none}
-    .hero-grid,.pro,.local{grid-template-columns:1fr}
-    .hero-art{max-width:380px;width:100%;margin:0 auto;aspect-ratio:1/1;border-radius:var(--radius)}
-    .grid,.steps,.ba,.quotes{grid-template-columns:1fr}
-    section{padding:56px 0}
-  }
-  @media (min-width:861px) and (max-width:1020px){
-    .grid,.ba,.quotes{grid-template-columns:repeat(2,1fr)}
-  }
+/* ===================== RODAPÉ ===================== */
+.final{text-align:center;padding:110px 0;background:var(--ink);color:var(--bg)}
+.final h2{color:var(--bg)}
+.final p{color:color-mix(in srgb,var(--bg) 72%,transparent);max-width:520px;margin:18px auto 34px}
+.final .btn{background:var(--bg);color:var(--ink)}
+footer{background:var(--ink);color:color-mix(in srgb,var(--bg) 60%,transparent);font-size:12.5px;padding:0 0 110px}
+footer .wrap{border-top:1px solid color-mix(in srgb,var(--bg) 14%,transparent);padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 30px}
+footer p{margin:0}
+footer a{color:inherit}
+
+/* ===================== AÇÕES FIXAS ===================== */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  transform:translateY(110%);transition:transform .35s ease}
+.mbar.on{transform:none}
+.mbar .btn{flex:1;padding:15px 12px}
+.mbar .ig{flex:none;width:52px;padding:0;background:transparent;border:1px solid var(--line);color:var(--ink)}
+.float{position:fixed;right:24px;bottom:24px;z-index:50;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;
+  box-shadow:0 12px 28px rgba(0,0,0,.22);transform:scale(0);transition:transform .3s ease}
+.float.on{transform:scale(1)}
+.float svg{width:30px;height:30px;fill:#fff}
+
+/* seletor de tema (só na demonstração) */
+.demo{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:6px 14px}
+.temas{display:inline-flex;gap:7px;align-items:center}
+.temas span{opacity:.75}
+.temas button{all:unset;cursor:pointer;width:16px;height:16px;border-radius:50%;box-shadow:0 0 0 1px rgba(255,255,255,.45)}
+.temas button[aria-pressed="true"]{box-shadow:0 0 0 2px var(--bg)}
+
+/* animação de entrada */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ===================== RESPONSIVO ===================== */
+@media (max-width:1000px){
+  nav{display:none}
+  .cats{grid-template-columns:repeat(2,1fr)}
+  .goals,.split,.res,.visit{grid-template-columns:1fr;gap:40px}
+  .goal-panel{position:static}
+  .quotes{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  section{padding:68px 0}
+  .hero-grid{grid-template-columns:1fr;min-height:0}
+  .hero-img{order:-1;height:46vh;min-height:300px;width:100%}
+  .hero-img img{object-position:50% 22%}
+  .hero-text{padding:30px 20px 44px}
+  .hero .lead{font-size:16.5px;margin-top:18px}
+  .hero .cta{margin-top:26px}
+  .hero h1{font-size:clamp(54px,15vw,76px)}
+  .trust ul{justify-content:flex-start;gap:10px 24px}
+  .cats{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 20px;gap:14px;margin:0 -20px;padding:0 20px 6px;scrollbar-width:none}
+  .cats::-webkit-scrollbar{display:none}
+  .cat{flex:0 0 78%;scroll-snap-align:start}
+  .points,.steps{grid-template-columns:1fr}
+  .step{padding:24px 0 0}
+  .goal-panel{padding:26px}
+  .top .btn{display:none}
+  .mbar{display:flex}
+  .float{display:none}
+  .rating .big{font-size:62px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+}
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
 <!--
-  =====================================================================
-  SITE-MODELO PARA CLÍNICA DE ESTÉTICA
-  Para personalizar: troque só o bloco CONFIG lá embaixo (no <script>).
-  Antes de entregar a uma cliente: CONFIG.demo = false e use apenas
-  fotos, depoimentos e notas REAIS dela (com autorização das pacientes).
-  =====================================================================
+  ============================================================================
+  MODELO DE SITE PARA CLÍNICA DE ESTÉTICA (versão 2)
+  Personalize só o bloco CONFIG no fim do arquivo e as tags "og:" do <head>.
+  Ao entregar para uma cliente:
+    1. CONFIG.demo = false (some a faixa e o seletor de tema)
+    2. Troque TODAS as fotos de img/ por fotos reais da clínica
+    3. Use só depoimentos e notas REAIS; antes e depois só com autorização
+  ============================================================================
 -->
 
-<div class="demo" id="demo">Site de demonstração. Nome, fotos e depoimentos são exemplos.</div>
+<div class="demo" id="demo"><span>Site de demonstração · conteúdo ilustrativo</span><span class="temas" id="temas" role="group" aria-label="Testar cores do site"></span></div>
 
 <header>
   <div class="wrap top">
-    <a href="#inicio" class="logo" data-c="nome">Clínica Exemplo</a>
-    <nav>
-      <a href="#procedimentos">Procedimentos</a>
+    <a href="#inicio" class="logo" aria-label="Início"><b data-c="nome">Clínica Exemplo</b><small data-c="assinatura">Estética avançada</small></a>
+    <nav aria-label="Seções">
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#objetivos">Objetivos</a>
       <a href="#resultados">Resultados</a>
       <a href="#sobre">Sobre</a>
-      <a href="#local">Onde estamos</a>
+      <a href="#visite">Contato</a>
     </nav>
-    <a class="btn sm" data-wa="Olá! Vi o site e quero agendar uma avaliação.">Agendar</a>
+    <a class="btn" data-wa="geral">Agendar</a>
   </div>
 </header>
 
 <main id="inicio">
+
+  <!-- HERO -->
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow" data-c="slogan">Estética avançada em Itumbiara</div>
-        <h1>Sua melhor versão, <em>com naturalidade</em> e segurança.</h1>
-        <p class="lead" data-c="intro">Protocolos personalizados, avaliação individual e acompanhamento depois do procedimento. Você sabe exatamente o que vai ser feito antes de começar.</p>
-        <div class="cta">
-          <a class="btn" data-wa="Olá! Vi o site e quero agendar uma avaliação.">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9 4.4 4.4 0 0 0 .9 2.3 10 10 0 0 0 3.8 3.4c1.4.6 2 .6 2.7.5.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1l-.3-.2Z"/></svg>
-            Agendar avaliação
-          </a>
-          <a class="btn ghost" href="#procedimentos">Ver procedimentos</a>
-        </div>
-        <div class="badges">
-          <span>★ <b data-c="notaGoogle">4,9</b> no Google (<span data-c="avaliacoes">120</span> avaliações)</span>
-          <span>Hora marcada, sem espera</span>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <span class="kicker rv" data-c="cidadeKicker">Estética avançada · Itumbiara</span>
+        <h1 class="rv"><span data-c="titulo1">Naturalmente,</span> <em data-c="titulo2">você.</em></h1>
+        <p class="lead rv" data-c="subtitulo">Protocolos personalizados, avaliação individual e resultados que respeitam os seus traços.</p>
+        <div class="cta rv">
+          <a class="btn" data-wa="geral"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9 4.4 4.4 0 0 0 .9 2.3 10 10 0 0 0 3.8 3.4c1.4.6 2 .6 2.7.5.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1l-.3-.2Z"/></svg>Agendar avaliação</a>
+          <a class="link" href="#tratamentos">Ver tratamentos</a>
         </div>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="ring" style="width:140%;height:140%;left:-20%;top:-20%"></div>
-        <div class="ring" style="width:100%;height:100%;left:0;top:0"></div>
-        <div class="ring" style="width:60%;height:60%;left:20%;top:20%"></div>
+      <div class="hero-img"><img src="img/hero.webp" alt="Mulher com pele natural e iluminada" width="1400" height="2097" fetchpriority="high"></div>
+    </div>
+  </section>
+
+  <div class="trust"><ul id="selos"></ul></div>
+
+  <!-- TRATAMENTOS -->
+  <section id="tratamentos">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><span class="kicker">Tratamentos</span><h2>Cuidados, <em>pensados</em> para você.</h2></div>
+        <a class="link" data-wa="geral">Falar com a clínica</a>
       </div>
+      <div class="cats" id="cats"></div>
     </div>
   </section>
 
-  <section id="procedimentos">
-    <div class="wrap">
-      <div class="eyebrow">Procedimentos</div>
-      <h2>O que fazemos por você</h2>
-      <p class="lead">Toque em um procedimento e fale direto com a gente no WhatsApp, já com a mensagem pronta.</p>
-      <div class="grid" id="lista-procedimentos"></div>
-    </div>
-  </section>
-
-  <section class="alt">
-    <div class="wrap">
-      <div class="eyebrow">Como funciona</div>
-      <h2>Simples do começo ao fim</h2>
-      <div class="steps">
-        <div class="step"><h3>Você chama no WhatsApp</h3><p>Escolhe o procedimento e o melhor horário para você.</p></div>
-        <div class="step"><h3>Avaliação individual</h3><p>Entendemos o que você quer e indicamos o protocolo certo, com valores claros.</p></div>
-        <div class="step"><h3>Procedimento e retorno</h3><p>Fazemos com segurança e acompanhamos o resultado depois.</p></div>
+  <!-- OBJETIVOS -->
+  <section class="alt" id="objetivos">
+    <div class="wrap goals">
+      <div class="rv">
+        <span class="kicker">Seu objetivo</span>
+        <h2>O que você quer <em>realçar?</em></h2>
+        <p class="lead">Escolha o que mais te incomoda. Mostramos o caminho e você fala direto com a gente, com a dúvida já escrita.</p>
+        <ul class="goal-list" id="goal-list" style="margin-top:28px"></ul>
       </div>
+      <div class="goal-panel rv" id="goal-panel" aria-live="polite"></div>
     </div>
   </section>
 
-  <section id="resultados">
-    <div class="wrap">
-      <div class="eyebrow">Resultados</div>
-      <h2>Antes e depois</h2>
-      <p class="lead">Resultados reais variam de pessoa para pessoa. Todas as fotos são publicadas com autorização das pacientes.</p>
-      <div class="ba" id="lista-resultados"></div>
-    </div>
-  </section>
-
-  <section class="alt" id="sobre">
-    <div class="wrap pro">
-      <div class="pro-pic" aria-hidden="true"></div>
-      <div>
-        <div class="eyebrow">Quem cuida de você</div>
+  <!-- PROFISSIONAL -->
+  <section id="sobre">
+    <div class="wrap split">
+      <div class="photo rv"><img src="img/maos.webp" alt="Profissional realizando tratamento facial" loading="lazy" width="900" height="1100"></div>
+      <div class="rv">
+        <span class="kicker">Quem cuida de você</span>
         <h2 data-c="pro.nome">Dra. Nome Sobrenome</h2>
-        <p class="meta" data-c="pro.titulo">Biomédica esteta</p>
-        <p class="lead" data-c="pro.texto">Mais de 8 anos de experiência em estética facial e corporal, com especialização em harmonização e bioestimuladores. Atendimento próximo, sem pressa e sem exagero.</p>
+        <p class="lead" data-c="pro.texto"></p>
+        <ul class="creds" id="creds"></ul>
         <span class="reg" data-c="pro.registro">CRBM 0000</span>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="wrap">
-      <div class="eyebrow">Quem já veio</div>
-      <h2>O que as clientes dizem</h2>
-      <div class="quotes" id="lista-depoimentos"></div>
+  <!-- EXPERIÊNCIA -->
+  <section class="alt">
+    <div class="wrap split">
+      <div class="rv">
+        <span class="kicker">A experiência</span>
+        <h2 data-c="experiencia.titulo">Ambiente reservado. Atendimento sem pressa.</h2>
+        <p class="lead" data-c="experiencia.texto"></p>
+        <div class="points" id="points"></div>
+      </div>
+      <div class="photo wide rv"><img src="img/ambiente.webp" alt="Sala de atendimento da clínica" loading="lazy" width="1200" height="900"></div>
     </div>
   </section>
 
+  <!-- RESULTADOS -->
+  <section id="resultados">
+    <div class="wrap res">
+      <div class="rv">
+        <span class="kicker">Resultados</span>
+        <h2>Resultados reais, <em>com cuidado.</em></h2>
+        <p class="lead">Arraste para comparar. Cada pessoa responde de um jeito, e a indicação é sempre feita na avaliação.</p>
+        <div class="tabs" id="res-tabs" role="group" aria-label="Escolha o resultado"></div>
+      </div>
+      <div class="rv">
+        <div class="cmp" id="cmp">
+          <img class="depois" id="cmp-depois" alt="" loading="lazy">
+          <img class="antes" id="cmp-antes" alt="" loading="lazy">
+          <div class="bar"></div><div class="knob" aria-hidden="true">‹›</div>
+          <span class="tag l">Antes</span><span class="tag r">Depois</span>
+          <input type="range" min="0" max="100" value="50" id="cmp-range" aria-label="Arraste para comparar antes e depois">
+        </div>
+        <p class="cap" id="cmp-cap"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVALIAÇÕES -->
   <section class="alt">
     <div class="wrap">
-      <div class="eyebrow">Dúvidas</div>
-      <h2>Perguntas frequentes</h2>
-      <div class="faq" id="lista-faq"></div>
+      <div class="sec-head rv">
+        <div><span class="kicker">Avaliações</span><h2>Quem vem, <em>volta.</em></h2></div>
+        <div class="rating"><span class="big" data-c="google.nota">4,9</span><div><span class="stars">★★★★★</span><small>no Google · <span data-c="google.total">120</span> avaliações</small></div></div>
+      </div>
+      <div class="quotes" id="quotes"></div>
     </div>
   </section>
 
-  <section id="local">
-    <div class="wrap local">
-      <div class="info">
-        <div class="eyebrow">Onde estamos</div>
-        <h2>Venha nos visitar</h2>
-        <p><b>Endereço</b><span data-c="endereco">Rua Exemplo, 123, Centro, Itumbiara, GO</span></p>
-        <p><b>Horário</b><span data-c="horario">Seg a sex, 8h às 19h · Sáb, 8h às 13h</span></p>
-        <p><b>Instagram</b><a id="link-insta" href="#" target="_blank" rel="noopener">@clinicaexemplo</a></p>
-        <a class="btn" data-wa="Olá! Vi o site e quero agendar uma avaliação.">Agendar pelo WhatsApp</a>
+  <!-- COMO FUNCIONA -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv"><div><span class="kicker">Como funciona</span><h2>Simples do <em>começo ao fim.</em></h2></div></div>
+      <div class="steps rv">
+        <div class="step"><span>01</span><h3>Você chama</h3><p>Pelo WhatsApp, no horário que preferir. A mensagem já vai escrita.</p></div>
+        <div class="step"><span>02</span><h3>Avaliação</h3><p>Entendemos seu objetivo e indicamos o protocolo certo, com valores claros.</p></div>
+        <div class="step"><span>03</span><h3>Cuidado contínuo</h3><p>Procedimento com segurança e retorno para acompanhar o resultado.</p></div>
       </div>
-      <div class="map"><iframe id="mapa" title="Mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="sec-head rv"><div><span class="kicker">Dúvidas</span><h2>Perguntas <em>frequentes.</em></h2></div></div>
+      <div class="faq rv" id="faq"></div>
+    </div>
+  </section>
+
+  <!-- VISITE -->
+  <section id="visite">
+    <div class="wrap visit">
+      <div class="info rv">
+        <span class="kicker">Visite</span>
+        <h2>Esperamos <em>por você.</em></h2>
+        <dl>
+          <div><dt>Endereço</dt><dd data-c="endereco"></dd></div>
+          <div><dt>Horário</dt><dd data-c="horario"></dd></div>
+          <div><dt>Telefone e WhatsApp</dt><dd data-c="telefone"></dd></div>
+        </dl>
+        <div class="cta">
+          <a class="btn" data-wa="geral">Agendar pelo WhatsApp</a>
+          <a class="btn out" id="ig-link" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="map rv"><iframe id="mapa" title="Mapa da clínica" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     </div>
   </section>
 
   <section class="final">
-    <div class="wrap">
-      <h2>Pronta para começar?</h2>
-      <p>Chame no WhatsApp, tire suas dúvidas e marque sua avaliação no horário que for melhor para você.</p>
-      <a class="btn" data-wa="Olá! Vi o site e quero agendar uma avaliação.">Agendar avaliação</a>
+    <div class="wrap rv">
+      <span class="kicker" style="color:inherit;opacity:.7">Agende</span>
+      <h2>Sua avaliação começa <em>com uma mensagem.</em></h2>
+      <p>Tire suas dúvidas, conheça os protocolos e escolha o melhor horário para você.</p>
+      <a class="btn" data-wa="geral">Agendar avaliação</a>
     </div>
   </section>
 </main>
 
-<footer><p><span data-c="nome">Clínica Exemplo</span> · <span data-c="endereco"></span></p></footer>
+<footer>
+  <div class="wrap">
+    <p><span data-c="nome"></span> · <span data-c="endereco"></span><br>Responsável técnica: <span data-c="pro.nome"></span> · <span data-c="pro.registro"></span></p>
+    <p>Resultados variam de pessoa para pessoa. <span id="foto-nota"></span><br><a id="credito" target="_blank" rel="noopener"></a></p>
+  </div>
+</footer>
 
-<a class="float" aria-label="Falar no WhatsApp" data-wa="Olá! Vi o site e quero agendar uma avaliação.">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9 4.4 4.4 0 0 0 .9 2.3 10 10 0 0 0 3.8 3.4c1.4.6 2 .6 2.7.5.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1l-.3-.2Z"/></svg>
-</a>
+<!-- ações fixas -->
+<div class="mbar" id="mbar">
+  <a class="btn" data-wa="geral">Agendar pelo WhatsApp</a>
+  <a class="btn ig" id="ig-mbar" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+</div>
+<a class="float" id="float" aria-label="Falar no WhatsApp" data-wa="geral"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9 4.4 4.4 0 0 0 .9 2.3 10 10 0 0 0 3.8 3.4c1.4.6 2 .6 2.7.5.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1l-.3-.2Z"/></svg></a>
 
 <script>
-/* =====================  PERSONALIZE AQUI  ===================== */
+/* ======================== PERSONALIZE AQUI ======================== */
 const CONFIG = {
-  demo: true,                       // false ao entregar para a cliente
+  demo: true,                 // false ao entregar: some a faixa e o seletor de tema
+  tema: "areia",              // "areia", "rose", "salvia" ou "noite"
   nome: "Clínica Exemplo",
-  slogan: "Estética avançada em Itumbiara",
-  whatsapp: "5564999999999",        // 55 + DDD + número, só dígitos
-  instagram: "clinicaexemplo",      // sem @
+  assinatura: "Estética avançada",
+  cidadeKicker: "Estética avançada · Itumbiara",
+  titulo1: "Naturalmente,",
+  titulo2: "você.",
+  subtitulo: "Protocolos personalizados, avaliação individual e resultados que respeitam os seus traços.",
+  whatsapp: "5564999999999",  // 55 + DDD + número, só dígitos
+  telefone: "(64) 99999-9999",
+  instagram: "clinicaexemplo",
   endereco: "Rua Exemplo, 123, Centro, Itumbiara, GO",
-  mapa: "Centro, Itumbiara, GO",    // texto que o Google Maps entende
-  horario: "Seg a sex, 8h às 19h · Sáb, 8h às 13h",
-  notaGoogle: "4,9",
-  avaliacoes: "120",
+  mapa: "Centro, Itumbiara, GO",
+  horario: "Segunda a sexta, 8h às 19h · Sábado, 8h às 13h",
+  google: { nota: "4,9", total: "120" },
+  selos: ["★★★★★ <b>4,9</b> no Google", "<b>8 anos</b> de experiência", "<b>+3.000</b> atendimentos", "Produtos com registro na <b>Anvisa</b>"],
+
+  categorias: [
+    { nome: "Facial", img: "img/facial.webp", desc: "Pele limpa, uniforme e luminosa.",
+      itens: ["Limpeza de pele profunda", "Peeling químico", "Microagulhamento"] },
+    { nome: "Injetáveis", img: "img/injetaveis.webp", desc: "Realce com equilíbrio e naturalidade.",
+      itens: ["Toxina botulínica", "Preenchimento labial", "Harmonização facial"] },
+    { nome: "Pele e colágeno", img: "img/pele.webp", desc: "Firmeza e sustentação de dentro para fora.",
+      itens: ["Bioestimulador de colágeno", "Skinbooster", "Fios de PDO"] },
+    { nome: "Corpo e bem-estar", img: "img/corpo.webp", desc: "Leveza, contorno e autocuidado.",
+      itens: ["Drenagem linfática", "Depilação a laser", "Tratamento de gordura localizada"] }
+  ],
+
+  objetivos: [
+    { nome: "Linhas de expressão", texto: "Suavizar as linhas da testa e dos olhos sem perder a expressão.", indicacao: ["Toxina botulínica", "Skinbooster"] },
+    { nome: "Flacidez", texto: "Devolver firmeza e sustentação ao rosto e ao pescoço.", indicacao: ["Bioestimulador de colágeno", "Fios de PDO", "Microagulhamento"] },
+    { nome: "Manchas e textura", texto: "Uniformizar o tom e deixar a pele mais lisa e luminosa.", indicacao: ["Peeling químico", "Microagulhamento", "Limpeza de pele"] },
+    { nome: "Lábios", texto: "Contorno, volume e hidratação na medida certa para o seu rosto.", indicacao: ["Preenchimento labial", "Skinbooster labial"] },
+    { nome: "Contorno do rosto", texto: "Definir mandíbula, queixo e maçãs com proporção.", indicacao: ["Harmonização facial", "Bioestimulador de colágeno"] },
+    { nome: "Olheiras", texto: "Amenizar sombras e cansaço na região dos olhos.", indicacao: ["Preenchimento de olheiras", "Skinbooster"] },
+    { nome: "Gordura localizada", texto: "Reduzir medidas em áreas específicas do corpo.", indicacao: ["Tratamento de gordura localizada", "Drenagem linfática"] },
+    { nome: "Pelos indesejados", texto: "Redução duradoura dos pelos com conforto.", indicacao: ["Depilação a laser"] }
+  ],
+
   pro: {
     nome: "Dra. Nome Sobrenome",
-    titulo: "Biomédica esteta",
-    registro: "CRBM 0000",
-    texto: "Mais de 8 anos de experiência em estética facial e corporal, com especialização em harmonização e bioestimuladores. Atendimento próximo, sem pressa e sem exagero."
+    registro: "Biomédica esteta · CRBM 0000",
+    texto: "Mais de 8 anos dedicados à estética facial e corporal. Atendimento próximo, sem pressa e sem exagero, com protocolos pensados para cada rosto.",
+    formacoes: ["Especialização em estética avançada", "Formação em harmonização orofacial", "Atualização anual em bioestimuladores"]
   },
-  procedimentos: [
-    { nome: "Limpeza de pele profunda", desc: "Remove impurezas, cravos e células mortas. Pele mais uniforme e luminosa já na primeira sessão.", meta: "60 min" },
-    { nome: "Harmonização facial", desc: "Realça seus traços com equilíbrio, sem mudar quem você é. Planejamento feito na avaliação.", meta: "Avaliação gratuita" },
-    { nome: "Bioestimulador de colágeno", desc: "Estimula a produção natural de colágeno para firmeza e sustentação da pele.", meta: "45 min" },
-    { nome: "Depilação a laser", desc: "Redução duradoura dos pelos com conforto e segurança para vários tipos de pele.", meta: "Pacotes por área" },
-    { nome: "Drenagem linfática", desc: "Reduz inchaço e retenção de líquido. Sensação de leveza logo depois da sessão.", meta: "50 min" },
-    { nome: "Micropigmentação de sobrancelhas", desc: "Desenho personalizado, com fios realistas e cor pensada para o seu tom.", meta: "Retoque incluso" }
-  ],
+
+  experiencia: {
+    titulo: "Ambiente reservado. Atendimento sem pressa.",
+    texto: "Um espaço tranquilo, pensado para a sua privacidade, com tempo para ouvir, explicar e cuidar.",
+    pontos: [
+      { t: "Avaliação individual", d: "Cada protocolo é desenhado para você." },
+      { t: "Segurança", d: "Materiais descartáveis e produtos registrados." },
+      { t: "Retorno incluso", d: "Acompanhamos o seu resultado depois." }
+    ]
+  },
+
+  // Antes e depois: na cliente real, use fotos autorizadas (antes e depois diferentes).
+  // ilustracao: true aplica um filtro só para demonstrar o comparador.
   resultados: [
-    { titulo: "Harmonização de lábios", nota: "1 sessão" },
-    { titulo: "Limpeza de pele", nota: "3 sessões" },
-    { titulo: "Micropigmentação", nota: "Resultado após 30 dias" }
+    { nome: "Viço e uniformidade", antes: "img/comparador.webp", depois: "img/comparador.webp", ilustracao: true,
+      legenda: "Ilustração do comparador. No site da clínica entram fotos reais, autorizadas pelas pacientes." }
   ],
+
   depoimentos: [
-    { texto: "Atendimento impecável. Explicou tudo antes e o resultado ficou natural, do jeito que eu queria.", nome: "Cliente de exemplo", proc: "Harmonização" },
-    { texto: "Minha pele nunca esteve tão bonita. Já marquei a próxima sessão.", nome: "Cliente de exemplo", proc: "Limpeza de pele" },
-    { texto: "Ambiente lindo, pontual e muito cuidadosa. Recomendo de olhos fechados.", nome: "Cliente de exemplo", proc: "Drenagem" }
+    { texto: "Explicou tudo antes e o resultado ficou natural, do jeito que eu queria.", nome: "Depoimento ilustrativo", proc: "Harmonização" },
+    { texto: "Minha pele nunca esteve tão bonita. Já marquei a próxima sessão.", nome: "Depoimento ilustrativo", proc: "Limpeza de pele" },
+    { texto: "Ambiente lindo, pontual e muito cuidadosa. Recomendo de olhos fechados.", nome: "Depoimento ilustrativo", proc: "Drenagem" }
   ],
+
   faq: [
     { p: "A avaliação é paga?", r: "A primeira avaliação é sem custo. Nela entendemos o seu objetivo e indicamos o protocolo ideal." },
-    { p: "Dói?", r: "Usamos técnicas e anestésicos tópicos para deixar cada procedimento o mais confortável possível." },
-    { p: "Quais as formas de pagamento?", r: "Pix, cartão de débito e crédito, com parcelamento em alguns procedimentos." },
-    { p: "Quanto tempo dura o resultado?", r: "Depende do procedimento e do seu organismo. Explicamos isso com clareza na avaliação." }
-  ]
+    { p: "Os procedimentos doem?", r: "Usamos técnicas e anestésicos tópicos para deixar cada procedimento o mais confortável possível." },
+    { p: "Quanto tempo dura o resultado?", r: "Depende do procedimento e do seu organismo. Explicamos isso com clareza na avaliação." },
+    { p: "Quais as formas de pagamento?", r: "Pix, débito e crédito, com parcelamento em alguns protocolos." },
+    { p: "Preciso de algum cuidado antes?", r: "Quando for necessário, enviamos as orientações pelo WhatsApp antes do seu horário." }
+  ],
+
+  fotoNota: "Fotos ilustrativas (Unsplash).",   // na cliente real: ""
+  credito: { texto: "Site por Diogo", link: "https://diogouser.github.io/estetica/" }
 };
-/* ============================================================== */
+/* ================================================================== */
 
-(function(){
-  const $ = (s, el=document) => el.querySelector(s);
-  const get = path => path.split(".").reduce((o,k)=>o && o[k], CONFIG);
+(function () {
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+  const get = p => p.split(".").reduce((o, k) => o && o[k], CONFIG);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const wa = msg => "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(msg);
-  const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const msgGeral = "Olá! Vi o site da " + CONFIG.nome + " e quero agendar uma avaliação.";
+  const ig = "https://instagram.com/" + CONFIG.instagram;
 
+  // tema e modo demonstração
+  const root = document.documentElement;
+  root.dataset.tema = CONFIG.tema;
   if (!CONFIG.demo) $("#demo").remove();
-  document.title = CONFIG.nome + " | Estética em Itumbiara";
 
-  document.querySelectorAll("[data-c]").forEach(el => {
-    const v = get(el.dataset.c);
-    if (v !== undefined) el.textContent = v;
-  });
+  // textos simples
+  $$("[data-c]").forEach(el => { const v = get(el.dataset.c); if (v !== undefined) el.textContent = v; });
+  document.title = CONFIG.nome + " | " + CONFIG.assinatura + " em Itumbiara";
 
-  $("#lista-procedimentos").innerHTML = CONFIG.procedimentos.map(p => `
-    <article class="card">
-      <span class="meta">${esc(p.meta)}</span>
-      <h3>${esc(p.nome)}</h3>
-      <p>${esc(p.desc)}</p>
-      <a class="btn sm" data-wa="Olá! Vi o site e quero agendar uma avaliação de ${esc(p.nome)}.">Quero agendar</a>
+  // selos (aceitam <b>)
+  $("#selos").innerHTML = CONFIG.selos.map(s => "<li>" + s.replace(/★+/, m => '<span class="stars">' + m + "</span>") + "</li>").join("");
+
+  // tratamentos
+  $("#cats").innerHTML = CONFIG.categorias.map((c, i) => `
+    <article class="cat rv">
+      <figure><img src="${esc(c.img)}" alt="${esc(c.nome)}" loading="lazy" width="800" height="1000"><span>${String(i + 1).padStart(2, "0")}</span></figure>
+      <h3>${esc(c.nome)}</h3>
+      <p>${esc(c.desc)}</p>
+      <ul>${c.itens.map(it => `<li><a data-wa-msg="Olá! Vi o site e quero agendar uma avaliação de ${esc(it)}.">${esc(it)}</a></li>`).join("")}</ul>
     </article>`).join("");
 
-  $("#lista-resultados").innerHTML = CONFIG.resultados.map(r => `
-    <figure>
-      <div class="pic"><span>Antes</span><span>Depois</span></div>
-      <figcaption>${esc(r.titulo)}<small>${esc(r.nota)}</small></figcaption>
-    </figure>`).join("");
-
-  $("#lista-depoimentos").innerHTML = CONFIG.depoimentos.map(d => `
-    <div class="quote">
-      <div class="stars">★★★★★</div>
-      <p>“${esc(d.texto)}”</p>
-      <div class="who">${esc(d.nome)} · ${esc(d.proc)}</div>
-    </div>`).join("");
-
-  $("#lista-faq").innerHTML = CONFIG.faq.map(f => `
-    <details><summary>${esc(f.p)}</summary><p>${esc(f.r)}</p></details>`).join("");
-
-  document.querySelectorAll("[data-wa]").forEach(a => {
-    a.href = wa(a.dataset.wa);
-    a.target = "_blank";
-    a.rel = "noopener";
+  // objetivos
+  const list = $("#goal-list"), panel = $("#goal-panel");
+  list.innerHTML = CONFIG.objetivos.map((o, i) => `<li><button type="button" data-i="${i}" aria-pressed="false">${esc(o.nome)}</button></li>`).join("");
+  function showGoal(i) {
+    const o = CONFIG.objetivos[i];
+    $$("button", list).forEach(b => b.setAttribute("aria-pressed", b.dataset.i == i));
+    panel.innerHTML = `
+      <span class="sel">Selecionado · ${String(i + 1).padStart(2, "0")}</span>
+      <h3>${esc(o.nome)}</h3>
+      <p>${esc(o.texto)}</p>
+      <span class="kicker" style="margin-bottom:10px">Costumamos indicar</span>
+      <ul class="chips">${o.indicacao.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+      <a class="btn" href="${wa("Olá! Vi o site e quero melhorar: " + o.nome + ". Pode me orientar?")}" target="_blank" rel="noopener">Quero melhorar isso</a>
+      <p class="note">A indicação final é feita na avaliação, de acordo com o seu caso.</p>`;
+  }
+  list.addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    showGoal(+b.dataset.i);
+    if (innerWidth <= 1000) panel.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
   });
+  showGoal(0);
 
-  const insta = $("#link-insta");
-  insta.href = "https://instagram.com/" + CONFIG.instagram;
-  insta.textContent = "@" + CONFIG.instagram;
+  // profissional e experiência
+  $("#creds").innerHTML = CONFIG.pro.formacoes.map(f => `<li>${esc(f)}</li>`).join("");
+  $("#points").innerHTML = CONFIG.experiencia.pontos.map(p => `<div><b>${esc(p.t)}</b><span>${esc(p.d)}</span></div>`).join("");
 
+  // resultados (comparador)
+  const cmp = $("#cmp"), range = $("#cmp-range"), tabs = $("#res-tabs");
+  function showRes(i) {
+    const r = CONFIG.resultados[i];
+    $("#cmp-antes").src = r.antes; $("#cmp-depois").src = r.depois;
+    $("#cmp-antes").alt = "Antes: " + r.nome; $("#cmp-depois").alt = "Depois: " + r.nome;
+    $("#cmp-antes").classList.toggle("ilustra", !!r.ilustracao);
+    $("#cmp-cap").textContent = r.legenda || "";
+    $$("button", tabs).forEach(b => b.setAttribute("aria-pressed", b.dataset.i == i));
+  }
+  tabs.innerHTML = CONFIG.resultados.map((r, i) => `<button type="button" data-i="${i}" aria-pressed="false">${esc(r.nome)}</button>`).join("");
+  tabs.addEventListener("click", e => { const b = e.target.closest("button"); if (b) showRes(+b.dataset.i); });
+  range.addEventListener("input", () => cmp.style.setProperty("--pos", range.value + "%"));
+  showRes(0);
+
+  // depoimentos e FAQ
+  $("#quotes").innerHTML = CONFIG.depoimentos.map(d => `
+    <figure class="quote rv" style="margin:0"><blockquote style="margin:0"><span class="stars">★★★★★</span><p>“${esc(d.texto)}”</p></blockquote>
+    <figcaption class="who">${esc(d.nome)} · ${esc(d.proc)}</figcaption></figure>`).join("");
+  $("#faq").innerHTML = CONFIG.faq.map(f => `<details><summary>${esc(f.p)}</summary><p>${esc(f.r)}</p></details>`).join("");
+
+  // contato, mapa, rodapé
   $("#mapa").src = "https://maps.google.com/maps?q=" + encodeURIComponent(CONFIG.mapa) + "&z=15&output=embed";
+  ["#ig-link", "#ig-mbar"].forEach(s => $(s).href = ig);
+  $("#foto-nota").textContent = CONFIG.fotoNota || "";
+  const cr = $("#credito");
+  if (CONFIG.credito && CONFIG.credito.texto) { cr.textContent = CONFIG.credito.texto; cr.href = CONFIG.credito.link; } else cr.remove();
+
+  // links de WhatsApp
+  $$("[data-wa]").forEach(a => { a.href = wa(msgGeral); a.target = "_blank"; a.rel = "noopener"; });
+  $$("[data-wa-msg]").forEach(a => { a.href = wa(a.dataset.waMsg); a.target = "_blank"; a.rel = "noopener"; });
+
+  // seletor de tema (demonstração)
+  if (CONFIG.demo) {
+    const temas = { areia: "#D8C7B6", rose: "#C98E99", salvia: "#8FA393", noite: "#1E1B19" };
+    const box = $("#temas");
+    box.innerHTML = "<span>Cores</span>" + Object.entries(temas).map(([k, c]) =>
+      `<button type="button" title="${k}" aria-label="Tema ${k}" data-t="${k}" style="background:${c}" aria-pressed="${k === CONFIG.tema}"></button>`).join("");
+    box.addEventListener("click", e => {
+      const b = e.target.closest("button"); if (!b) return;
+      root.dataset.tema = b.dataset.t;
+      $$("button", box).forEach(x => x.setAttribute("aria-pressed", x === b));
+    });
+  }
+
+  // barra fixa no celular e botão flutuante
+  const mbar = $("#mbar"), fl = $("#float");
+  const onScroll = () => { const on = scrollY > 520; mbar.classList.toggle("on", on); fl.classList.toggle("on", on); };
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  // animação de entrada
+  const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  }), { rootMargin: "0px 0px -8% 0px" }) : null;
+  $$(".rv").forEach(el => io ? io.observe(el) : el.classList.add("in"));
+
+  // dados estruturados para o Google
+  const ld = document.createElement("script");
+  ld.type = "application/ld+json";
+  ld.textContent = JSON.stringify({
+    "@context": "https://schema.org", "@type": "HealthAndBeautyBusiness",
+    name: CONFIG.nome, telephone: "+" + CONFIG.whatsapp, address: CONFIG.endereco,
+    openingHours: CONFIG.horario, url: location.href, sameAs: [ig],
+    aggregateRating: CONFIG.demo ? undefined : { "@type": "AggregateRating", ratingValue: CONFIG.google.nota.replace(",", "."), reviewCount: CONFIG.google.total }
+  });
+  document.head.appendChild(ld);
 })();
 </script>
 </body>
